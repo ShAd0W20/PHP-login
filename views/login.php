@@ -15,7 +15,7 @@ include_once "../components/header.php";
 
                             <form action="../includes/login.inc.php" method="POST">
                                 <?php
-                                if (isset($_GET["error"])) :
+                                if (isset($_GET["error"]) && !empty($_GET["error"])) :
                                     $error = $_GET["error"];
                                     $errorCode;
                                     switch ($error) {

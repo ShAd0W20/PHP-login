@@ -23,12 +23,6 @@ $row = getUserData($connection, $_SESSION["username"]);
             <div class="col-lg-6">
                 <div class="table-responsive">
                     <table class="table table-sm table-borderless">
-                        <?php
-                        if (isset($_SESSION["error"])) {
-                            $error = $_SESSION["error"];
-                            echo "<div class='alert alert-danger' role='alert'> $error </div>";
-                        }
-                        ?>
                         <tbody>
                             <tr>
                                 <td>Nombre completo</td>
