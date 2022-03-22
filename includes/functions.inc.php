@@ -98,7 +98,8 @@ function loginUser($connection, $userName, $password)
     }
 
     $hashPassword = $row["userPwd"];
-    if(!password_verify($password, $hashPassword)) {
+
+    if (!password_verify($password, $hashPassword)) {
         header("Location: ../views/login.php?error=invalidUserPasswd");
         exit();
     } else {
@@ -121,5 +122,4 @@ function getUserData($connection, $userName)
     }
 
     return $row;
-
 }
