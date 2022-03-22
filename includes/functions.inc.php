@@ -39,7 +39,7 @@ function passwordMatch($password, $passwordRepeat)
 
 function userExists($connection, $username)
 {
-    $sql = "SELECT userName FROM users WHERE userName = ?;";
+    $sql = "SELECT * FROM users WHERE userName = ?;";
     $stmt = mysqli_stmt_init($connection);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -90,20 +90,22 @@ function emptyInputLogin($userName, $password)
 
 function loginUser($connection, $userName, $password)
 {
-    $userExists = userExists($connection, $userName);
+    $row = userExists($connection, $userName);
 
-    if ($userExists === false) {
+    if ($row === false) {
         header("Location: ../login.php?error=invalidUserPasswd");
         exit();
     }
 
-    if(!password_verify($password, $userExists["userPwd"])) {
+    $hashPassword = $row["userPwd"];
+    if(!password_verify($password, $hashPassword)) {
         header("Location: ../login.php?error=invalidUserPasswd");
         exit();
     } else {
         session_start();
-        $_SESSION["userid"] = $userExists["userId"];
-        $_SESSION["username"] = $userExists["userName"];
+        session_regenerate_id();
+        $_SESSION["userid"] = $row["userId"];
+        $_SESSION["username"] = $row["userName"];
         header("Location: ../index.php");
         exit();
     }

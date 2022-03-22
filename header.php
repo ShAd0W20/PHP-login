@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,12 +27,23 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="https://localhost/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://localhost/login.php">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://localhost/signup.php">Register</a>
-                    </li>
+                    <?php
+                    if (!isset($_SESSION["userid"])) :
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://localhost/login.php">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://localhost/signup.php">Register</a>
+                        </li>
+                    <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://localhost/profile.php">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://localhost/includes/logout.inc.php">Logout</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

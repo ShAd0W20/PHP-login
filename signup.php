@@ -40,6 +40,8 @@ include_once "header.php";
                                         case "none":
                                             $errorCode = "You have signed up!";
                                             break;
+                                        default:
+                                            $errorCode = "";
                                     }
 
                                     if ($error !== "none") :

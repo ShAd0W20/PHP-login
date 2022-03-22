@@ -1,13 +1,17 @@
-<?php 
-    include_once "header.php";
+<?php
+include_once "header.php";
 ?>
 
-    <section>
-        <div>
-            <p>Hello</p>
-        </div>
-    </section>
+<section>
+    <div>
+        <?php
+        if (isset($_SESSION["userid"])) {
+            echo "<p>Hello there " . $_SESSION["username"] . ", welcome back!</p>";
+        } 
+        ?>
+    </div>
+</section>
 
-<?php 
-    include_once "footer.php";
+<?php
+include_once "footer.php";
 ?>

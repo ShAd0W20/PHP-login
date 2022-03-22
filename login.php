@@ -17,7 +17,7 @@ include_once "header.php";
                                 Welcome Back
                             </h2>
 
-                            <form action="inclues/signup.inc.php" method="POST">
+                            <form action="includes/login.inc.php" method="POST">
                                 <?php
                                 if (isset($_GET["error"])) :
                                     $error = $_GET["error"];
@@ -29,6 +29,8 @@ include_once "header.php";
                                         case "invalidUserPasswd":
                                             $errorCode = "Wrong username or password";
                                             break;
+                                        default:
+                                            $errorCode = "";
                                     }
                                 ?>
                                     <div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -51,7 +53,7 @@ include_once "header.php";
 
                                 <div class="col-12">
                                     <div class="d-grid">
-                                        <button type="loginSubmit" class="btn btn-outline-success">
+                                        <button type="submit" name="loginSubmit" class="btn btn-outline-success">
                                             Login
                                         </button>
                                     </div>
