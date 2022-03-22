@@ -110,3 +110,16 @@ function loginUser($connection, $userName, $password)
         exit();
     }
 }
+
+function getUserData($connection, $userName)
+{
+    $row = userExists($connection, $userName);
+
+    if ($row === false) {
+        header("Location: ../index.php");
+        exit();
+    }
+
+    return $row;
+
+}

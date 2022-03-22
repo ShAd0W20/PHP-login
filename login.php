@@ -2,10 +2,6 @@
 include_once "header.php";
 ?>
 
-<?php
-include_once "header.php";
-?>
-
 <div class="login">
     <div class="d-flex align-items-center h-100 gradient-custom-3 mt-4">
         <div class="container h-100">
