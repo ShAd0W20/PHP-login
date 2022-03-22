@@ -1,5 +1,5 @@
 <?php
-include_once "header.php";
+include_once "../components/header.php";
 ?>
 
 <div class="register">
@@ -13,7 +13,7 @@ include_once "header.php";
                                 Create an account
                             </h2>
 
-                            <form action="includes/signup.inc.php" method="POST">
+                            <form action="../includes/signup.inc.php" method="POST">
                                 <?php
                                 if (isset($_GET["error"])) :
                                     $error = $_GET["error"];
@@ -99,5 +99,5 @@ include_once "header.php";
 </div>
 
 <?php
-include_once "footer.php";
+include_once "../components/footer.php";
 ?>

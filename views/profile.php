@@ -1,7 +1,7 @@
 <?php
-include_once "header.php";
-require_once "includes/dbh.inc.php";
-require_once "includes/functions.inc.php";
+include_once "../components/header.php";
+require_once "../includes/dbh.inc.php";
+require_once "../includes/functions.inc.php";
 $row = getUserData($connection, $_SESSION["username"]);
 ?>
 
@@ -43,5 +43,5 @@ $row = getUserData($connection, $_SESSION["username"]);
 </section>
 
 <?php
-include_once "footer.php";
+include_once "../components/footer.php";
 ?>

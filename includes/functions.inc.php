@@ -43,7 +43,7 @@ function userExists($connection, $username)
     $stmt = mysqli_stmt_init($connection);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("Location: ../signup.php?error=stmtFailed");
+        header("Location: ../views/signup.php?error=stmtFailed");
         exit();
     }
 
@@ -66,7 +66,7 @@ function createUser($connection, $username, $password)
     $stmt = mysqli_stmt_init($connection);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("Location: ../signup.php?error=stmtFailed");
+        header("Location: ../views/signup.php?error=stmtFailed");
         exit();
     }
 
@@ -76,7 +76,7 @@ function createUser($connection, $username, $password)
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("Location: ../signup.php?error=none");
+    header("Location: ../views/signup.php?error=none");
     exit();
 }
 
@@ -93,13 +93,13 @@ function loginUser($connection, $userName, $password)
     $row = userExists($connection, $userName);
 
     if ($row === false) {
-        header("Location: ../login.php?error=invalidUserPasswd");
+        header("Location: ../views/login.php?error=invalidUserPasswd");
         exit();
     }
 
     $hashPassword = $row["userPwd"];
     if(!password_verify($password, $hashPassword)) {
-        header("Location: ../login.php?error=invalidUserPasswd");
+        header("Location: ../views/login.php?error=invalidUserPasswd");
         exit();
     } else {
         session_start();

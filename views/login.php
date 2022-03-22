@@ -1,5 +1,5 @@
 <?php
-include_once "header.php";
+include_once "../components/header.php";
 ?>
 
 <div class="login">
@@ -13,7 +13,7 @@ include_once "header.php";
                                 Welcome Back
                             </h2>
 
-                            <form action="includes/login.inc.php" method="POST">
+                            <form action="../includes/login.inc.php" method="POST">
                                 <?php
                                 if (isset($_GET["error"])) :
                                     $error = $_GET["error"];
@@ -69,9 +69,5 @@ include_once "header.php";
 </div>
 
 <?php
-include_once "footer.php";
-?>
-
-<?php
-include_once "footer.php";
+include_once "../components/footer.php";
 ?>

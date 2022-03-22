@@ -9,33 +9,33 @@ if(isset($_POST["signupSubmit"])) {
     $passwordRepeat = mysqli_real_escape_string($connection, $_POST["passwordRepeat"]);
 
     if(emptyInputSignup($userName, $password, $passwordRepeat) !== false) {
-        header("Location: ../signup.php?error=emptyInputs");
+        header("Location: ../views/signup.php?error=emptyInputs");
         exit();
     }
 
     if(invalidUsername($userName) !== false) {
-        header("Location: ../signup.php?error=invalidUsername");
+        header("Location: ../views/signup.php?error=invalidUsername");
         exit();
     }
 
     if(invalidPassowrd($password) !== false) {
-        header("Location: ../signup.php?error=invalidPassword");
+        header("Location: ../views/signup.php?error=invalidPassword");
         exit();
     }
 
     if(passwordMatch($password, $passwordRepeat) !== false) {
-        header("Location: ../signup.php?error=passwordMatch");
+        header("Location: ../views/signup.php?error=passwordMatch");
         exit();
     }
 
     if(userExists($connection, $userName) !== false) {
-        header("Location: ../signup.php?error=userExists");
+        header("Location: ../views/signup.php?error=userExists");
         exit();
     }
 
     createUser($connection, $userName, $password);
 
 } else {
-    header("Location: ../signup.php");
+    header("Location: ../views/signup.php");
     exit();
 }

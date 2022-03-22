@@ -8,12 +8,12 @@ if (isset($_POST["loginSubmit"])) {
     $password = mysqli_real_escape_string($connection, $_POST["password"]);
 
     if (emptyInputLogin($userName, $password) !== false) {
-        header("Location: ../login.php?error=emptyInputs");
+        header("Location: ../views/login.php?error=emptyInputs");
         exit();
     }
 
     loginUser($connection, $userName, $password);
 } else {
-    header("Location: ../login.php");
+    header("Location: ../views/login.php");
     exit();
 }
