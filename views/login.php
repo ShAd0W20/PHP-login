@@ -1,5 +1,6 @@
 <?php
-include_once "../components/header.php";
+define("shad0wstv", true);
+include_once (__DIR__ . "/../components/header.php");
 ?>
 
 <div class="login">

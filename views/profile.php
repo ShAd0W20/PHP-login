@@ -1,7 +1,8 @@
 <?php
-include_once "../components/header.php";
-require_once "../includes/dbh.inc.php";
-require_once "../includes/functions.inc.php";
+define("shad0wstv", true);
+require_once (__DIR__ . "/../includes/dbh.inc.php");
+require_once (__DIR__ . "/../includes/functions.inc.php");
+include_once (__DIR__ . "/../components/header.php");
 $row = getUserData($connection, $_SESSION["username"]);
 ?>
 

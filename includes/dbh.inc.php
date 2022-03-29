@@ -1,9 +1,11 @@
 <?php
 
-$serverName = "localhost";
-$dbUsername = "root";
-$dbPasswd = "";
-$dbName = "phplogin_prepare";
+$ini = parse_ini_file(__DIR__ . "/../config.ini");
+
+$serverName = $ini["SERVERNAME"];
+$dbUsername = $ini["DBUSERNAME"];
+$dbPasswd = $ini["DBPASSWD"];
+$dbName = $ini["DBNAME"];
 
 $connection = mysqli_connect($serverName, $dbUsername, $dbPasswd, $dbName);
 

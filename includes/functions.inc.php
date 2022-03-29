@@ -107,7 +107,7 @@ function loginUser($connection, $userName, $password)
         session_regenerate_id();
         $_SESSION["userid"] = $row["userId"];
         $_SESSION["username"] = $row["userName"];
-        header("Location: ../index.php");
+        header("Location: ../");
         exit();
     }
 }
@@ -117,7 +117,7 @@ function getUserData($connection, $userName)
     $row = userExists($connection, $userName);
 
     if ($row === false) {
-        header("Location: ../index.php");
+        header("Location: ../");
         exit();
     }
 

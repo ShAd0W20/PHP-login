@@ -1,4 +1,5 @@
 <?php
+if(!defined("shad0wstv")) exit();
 session_start();
 ?>
 <!DOCTYPE html>
@@ -41,7 +42,7 @@ session_start();
                             <a class="nav-link" href="https://localhost/views/profile.php">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://localhost/includes/logout.inc.php">Logout</a>
+                            <a class="nav-link" href="https://localhost/views/logout.php">Logout</a>
                         </li>
                     <?php endif; ?>
                 </ul>
