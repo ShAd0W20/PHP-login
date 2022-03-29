@@ -1,6 +1,6 @@
 <?php
 define("shad0wstv", true);
-include_once (__DIR__ . "/../components/header.php");
+include_once(__DIR__ . "/../components/header.php");
 ?>
 
 <div class="login">
@@ -26,8 +26,6 @@ include_once (__DIR__ . "/../components/header.php");
                                         case "invalidUserPasswd":
                                             $errorCode = "Wrong username or password";
                                             break;
-                                        default:
-                                            $errorCode = "";
                                     }
                                 ?>
                                     <div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -70,5 +68,5 @@ include_once (__DIR__ . "/../components/header.php");
 </div>
 
 <?php
-include_once "../components/footer.php";
+include_once(__DIR__ . "/../components/footer.php");
 ?>

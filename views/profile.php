@@ -1,8 +1,8 @@
 <?php
 define("shad0wstv", true);
-require_once (__DIR__ . "/../includes/dbh.inc.php");
-require_once (__DIR__ . "/../includes/functions.inc.php");
-include_once (__DIR__ . "/../components/header.php");
+require_once(__DIR__ . "/../includes/dbh.inc.php");
+require_once(__DIR__ . "/../includes/functions.inc.php");
+include_once(__DIR__ . "/../components/header.php");
 $row = getUserData($connection, $_SESSION["username"]);
 ?>
 
@@ -38,5 +38,5 @@ $row = getUserData($connection, $_SESSION["username"]);
 </section>
 
 <?php
-include_once "../components/footer.php";
+include_once(__DIR__ . "/../components/footer.php");
 ?>

@@ -1,6 +1,6 @@
 <?php
 define("shad0wstv", true);
-include_once (__DIR__ . "/../components/header.php");
+include_once(__DIR__ . "/../components/header.php");
 ?>
 
 <div class="register">
@@ -100,5 +100,5 @@ include_once (__DIR__ . "/../components/header.php");
 </div>
 
 <?php
-include_once "../components/footer.php";
+include_once(__DIR__ . "/../components/footer.php");
 ?>
